@@ -1,5 +1,5 @@
 """
-Aufgabe (b)
+Task (b)
 """
 
 import numpy as np
@@ -7,7 +7,7 @@ import numpy.linalg as lin
 from scipy.sparse import diags
 
 
-def tridiagloes(a,b,f):
+def solve_tridiagonal(a,b,f):
     
     n = len(f) # n is the number of rows
     c=np.zeros(n)
@@ -24,14 +24,14 @@ def tridiagloes(a,b,f):
     c[n-1]= np.sqrt(a[n-1]-(d[n-2]**2))
    
     
-    #Vorwärtseinsetzung
+    #Forward substitution
     
     y[0]=f[0]/c[0]
     
     for i in range(1,n):
         y[i]=(f[i]-d[i-1]*y[i-1])/c[i]
     
-    #Rückwärtseinsetzung
+    #Backward substitution
     
     u[n-1]=y[n-1]/c[n-1]
 
@@ -52,8 +52,8 @@ A = diags(k,[-1,0,1]).toarray() #creates tridiagonal matrix and converts it to a
 # k < 0 the kth lower diagonalonal matrix
 
 #print(lin.solve(A,f))
-print(tridiagloes(a,b,f))
+print(solve_tridiagonal(a,b,f))
 
-""" Je größer n, desto größer sind die Einträge des 
-Verschiebungsvektors u
+""" As n increases, the entries of the 
+displacement vector u also increase
 """

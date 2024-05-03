@@ -1,21 +1,17 @@
 #!/usr/bin/env node
 
-"""
-Erste Programmieraufgabe
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 
 max_iterations = 10000
 
-"""regulafalsi(f,a,b,tol) berechnet eine Nullstelle der Funktion f im Intervall [a,b] mit der Regula Falsi.
+"""bisection_method(f,a,b,tol) calculates a root of the function f in the interval [a,b] using the Bisection Method.
 """
 
-def regulafalsi(f,a,b,tol): #Wähle a und b nah dran zu 
-    #der Nullstelle c,
-    #so dass a<b und f(a) und f(b) verschiedenes Vorzeichen haben  
+def bisection_method(f,a,b,tol): ##Choose a and b close to 
+    #the root c,
+    #so that a<b and f(a) and f(b) have different signs
    
     if f(a)*f(b)<0: 
         
@@ -33,11 +29,11 @@ def regulafalsi(f,a,b,tol): #Wähle a und b nah dran zu
                     a = c 
 
     else:
-        return "a unb b sind falsch gewählt"
+        return "a and b are not chosen correctly"
     
     return round(c,10)
   
-def f(x): #funktion f
+def f(x): #function f
     return (1 + math.cos(x)*math.cosh(x))
 
 fig = plt.figure()
@@ -49,7 +45,7 @@ plt.plot(x, y(x), color='black')
 plt.grid(which='both', alpha=0.3)
 plt.ticklabel_format(useOffset = False)
 
-print(regulafalsi(y,1,3,0.001))
+print(bisection_method(y,1,3,0.001))
 
 plt.show()
 

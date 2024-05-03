@@ -1,16 +1,11 @@
-"""
-Erste Programmieraufgabe
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-"""interpoly(x,f) berechnet zu gegebenen Stützpunkten (xj,fj) mit x=[x1,...,xn], f=[f1, ..., fn] das zugehörige 
-Interpolationspolynom und plotet im Intervall x ∈[min xj,max xj]. 
+"""interpolate_polynomial(x,f) calculates the corresponding interpolation polynomial for given points (xj,fj) with x=[x1,...,xn], f=[f1,..., fn] and plots it in the interval x ��[min xj,max xj]. 
 """
 
-def interpoly(x,f):
+def interpolate_polynomial(x,f):
     
     fig, axes = plt.subplots()
     fig.tight_layout(h_pad=2.5)
@@ -22,10 +17,10 @@ def interpoly(x,f):
     
     plt.show()
     
-    return 'Interpolationspolynomswerte bei x=[x0,x1,...,xn-1]: {}'.format(polynomial(x,f,x))
+    return 'Interpolation polynomial values at x=[x0,x1,...,xn-1]: {}'.format(polynomial(x,f,x))
     
 
-#polynom 
+#polynomial 
 
 def polynomial(x,f,x_val):
     
@@ -70,11 +65,11 @@ def func2(x):
 func_2=np.array(func2(x)) #bei n äquidistante Stützstellen
 func_2T=np.array(func2(x_T)) #bei Tschebyscheff-Stützstellen
 
-print(interpoly(x,func_2))
+print(interpolate_polynomial(x,func_2))
 
-print(interpoly(x_T,func_2T))
+print(interpolate_polynomial(x_T,func_2T))
 
-print(interpoly(x,func_1))
+print(interpolate_polynomial(x,func_1))
 
-print(interpoly(x_T,func_1T))
+print(interpolate_polynomial(x_T,func_1T))
 

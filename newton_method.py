@@ -1,15 +1,11 @@
 #!/usr/bin/env node
 
-"""
-Zweite Programmieraufgabe
-"""
-
 import numpy as np
 from numpy import linalg as la
 
 max_iterations = 10000
 
-"""newton_method(x0,f,f1) berechnet mit Hilfe des Newton-Verfahrens die Gleichgewichtslage x für die Masse m.
+"""newton_method(x0, f, f1) calculates the equilibrium position x for the mass m using the Newton-Raphson method.
 """
 
 def newton_method(x0,f,f1):
@@ -53,5 +49,5 @@ x02=np.array([0,4]).reshape(2,1)
 print(newton_method(x01,f,f1))
 print(newton_method(x02,f,f1))
 
-"""Die Ergebnisse sind unterschiedlich, weil f mehr als nur eine Nullstelle haben kann. Abhängig von dem Startwert können wir verschiedene Nullstellen bekommen.
+"""# The results are different because function f can have multiple roots, depending on the initial guess.
 """

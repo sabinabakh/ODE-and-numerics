@@ -1,5 +1,5 @@
 """
-Aufgabe (c)
+Task (c)
 """
 
 import numpy as np

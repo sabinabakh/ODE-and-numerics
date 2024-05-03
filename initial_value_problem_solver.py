@@ -1,9 +1,5 @@
-"""
-Erste Programmieraufgabe
-"""
-
-"""loeservergleich(h) löst Anfangsproblem im Intervall [0,50] mit dem expliziten Eulerverfahren, dem 
-Collatzverfahren und dem Heunverfahre und die Lösungen in ein Diagramm plottet.
+"""solution_comparison(h) solves an initial value problem in the interval [0,50] using the explicit Euler method, 
+the Collatz method, and the Heun method, and plots the solutions in a diagram.
 """
 
 import numpy as np
@@ -11,7 +7,7 @@ from matplotlib import pyplot as plt
 
 """initial value problem
 """
-def loeservergleich(h):
+def solution_comparison(h):
         
     #initial condition
     
@@ -49,7 +45,7 @@ def loeservergleich(h):
     fig, axes = plt.subplots()
     fig.tight_layout()
     
-    axes.plot(t, y1, label='explicit Euler method')
+    axes.plot(t, y1, label='Explicit Euler method')
     axes.plot(t, y2, label='Collatz method')
     axes.plot(t, y3, label='Heun method')
     
@@ -61,4 +57,4 @@ def loeservergleich(h):
     return ' '
                 
 for i in [0.5,0.2,0.1,0.01]:
-    print(loeservergleich(i))    
+    print(solution_comparison(i))  
